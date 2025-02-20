@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.titulo {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ff69b4;
+    font-family: 'Dancing Script', cursive; 
+}
+
+.mensaje {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.imagen-container {
+    width: 100%;
+    height: 400px; /* Ajusta la altura según sea necesario */
+    background-size: cover; 
+    background-position: center;
+    border-radius: 10px;
+}
+
+.imagen-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.balloons {
+    position: fixed;
+    bottom: -100px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Para que no interfieran con el contenido */
+    overflow: hidden;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    width: 50px;
+    height: 70px;
+    background-color: red; /* Color del globo */
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: floatBalloon 6s linear infinite;
+}
+
+/* Diferentes tamaños y posiciones para cada globo */
+.balloon:nth-child(1) {
+    left: 10%;
+    animation-duration: 5s;
+}
+.balloon:nth-child(2) {
+    left: 30%;
+    width: 60px;
+    height: 80px;
+    animation-duration: 7s;
+}
+.balloon:nth-child(3) {
+    left: 50%;
+    animation-duration: 6s;
+}
+.balloon:nth-child(4) {
+    left: 70%;
+    width: 40px;
+    height: 60px;
+    animation-duration: 5.5s;
+}
+.balloon:nth-child(5) {
+    left: 90%;
+    animation-duration: 7.5s;
+}
+
+/* Animación de los globos */
+@keyframes floatBalloon {
+    0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* Ajustes para pantallas pequeñas (celulares) */
+@media screen and (max-width: 600px) {
+    .titulo {
+        font-size: 1.8em; /* Reduce el tamaño en móviles */
+    }
+    .mensaje {
+        font-size: 1em;
+    }
+    .imagen-container img {
+        width: 90%; /* Evita que la imagen ocupe toda la pantalla */
+    }
+}
+
